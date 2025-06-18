@@ -12,6 +12,8 @@ namespace u23601711_HW1.Models
         public string ServiceName { get; set; }
         public string ServiceDescription { get; set; }
 
+        public string ServiceImage { get; set; }
+
 
 
         

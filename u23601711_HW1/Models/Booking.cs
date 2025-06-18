@@ -7,7 +7,7 @@ namespace u23601711_HW1.Models
 {
     public class Booking
     {
-        public int BookingID { get; set; }
+        public Guid BookingID { get; set; } = Guid.NewGuid();
 
         public int DriverID { get; set; }
         public int VehicleID { get; set; }
@@ -16,6 +16,6 @@ namespace u23601711_HW1.Models
         public DateTime PickUpTime { get; set; }
         public string PickUpAddress { get; set; }
 
-        //SOS booking??????????????????
+        //SOS booking?????????????????? reason??
     }
 }
