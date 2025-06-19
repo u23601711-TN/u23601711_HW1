@@ -183,8 +183,8 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\SelectService.cshtml" />
-    <Content Include="Views\BookingForm.cshtml" />
+    <Content Include="Views\Home\SelectService.cshtml" />
+    <Content Include="Views\Home\BookingForm.cshtml" />
     <Content Include="Views\BookingConfirmed.cshtml" />
     <Content Include="Views\RideHistory.cshtml" />
     <Content Include="Views\DriverVehicleManagement.cshtml" />

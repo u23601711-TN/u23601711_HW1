@@ -22,6 +22,11 @@ namespace u23601711_HW1.Models
 
         };
 
+        public static List<Driver> GetDrivers()
+        {
+            return Drivers;
+        }
+
 
     }
 }

@@ -1,4 +1,5 @@
-﻿@model u23601711_HW1.Models.DriverViewModel
+﻿@*@model List<u23601711_HW1.Models.Driver> *@
+    @model u23601711_HW1.Models.DriverViewModel
 @{
     ViewBag.Title = "SelectService";
 }
@@ -9,7 +10,7 @@
 
 <div class="container mt-5">
 
-    @foreach (var driver in Model.drivers)
+    @foreach (var driver in Model.Drivers)
     {
         <div class="row row-cols-1 row-cols-md-3 g-4">
 
@@ -17,7 +18,7 @@
                 <a href="#" class="text-decoration-none text-reset">
                     @*change # to relevant view*@
                     <div class="card h-100">
-                        <img src="@item." class="card-img-top">
+                        <img src="@driver.DriverImage" class="card-img-top">
                         <div class="card-body">
                             <h5 class="card-title">Advanced Life Support</h5>
                             <p class="card-text">ALS ambulance is staffed by a Paramedic and is used to transport patients who require high level of care.</p>

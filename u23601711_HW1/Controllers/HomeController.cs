@@ -26,6 +26,7 @@ namespace u23601711_HW1.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+            
         }
 
         public List<Service> Services = new List<Service>
@@ -46,6 +47,18 @@ namespace u23601711_HW1.Controllers
             };
             return View(viewModel);
         }
+
+        public ActionResult bookingform()
+        {
+            return View();
+        }
+
+        public ActionResult selectService()
+        {
+            return View();
+        }
+
+
 
 
     }
