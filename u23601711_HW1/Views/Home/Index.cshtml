@@ -1,3 +1,44 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "About";
+}
+<div class="jumbotron">
+    <h1>A real O.K. team here to try and save you</h1>
+    <p>If you're still breathing once you've reached the hospital, we've done our job successfully!</p>
+    <p>
+        @Html.ActionLink("BOOK AMBULANCE", "Index", "SelectService", null, new { @class = "btn btn-primary btn-lg" })
+    </p>
+</div>
+
+<div class="row">
+    <div class="col-md-8">
+        <h2>EMERGENCY?</h2>
+        <p>Only hit the button for real emergencies mind you... Stepping on a thumbtack at 3 am while doing arts and crafts is not an emergency</p>
+    </div>
+    <div class="col-md-4 text-center">
+        @*  @using (Html.BeginForm("CreateSOSBooking", "Home", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <button type="submit" class="btn btn-danger btn-circle btn-xl">S.O.S.</button>
+        } *@
+
+        <button type="submit" class="btn btn-danger btn-circle btn-xl">S.O.S.</button>
+    </div>
+</div>
+
+@section scripts {
+    <style>
+        /* Basic SOS button styling */
+        .btn-circle.btn-xl {
+            width: 150px;
+            height: 150px;
+            padding: 10px 16px;
+            border-radius: 75px;
+            font-size: 24px;
+            line-height: 1.33;
+        }
+
+        .jumbotron h1, p {
+            text-align: center;
+        }
+    </style>
 }

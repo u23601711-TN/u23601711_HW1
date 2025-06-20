@@ -5,10 +5,10 @@ using System.Web;
 
 namespace u23601711_HW1.Models
 {
-    public class DriverRespository
+    public class DriverRepository
     {
 
-        public static List<Driver> Drivers = new List<Driver>
+        private static List<Driver> Drivers = new List<Driver>
         {
            //return new List<Driver>();
             
@@ -25,6 +25,11 @@ namespace u23601711_HW1.Models
         public static List<Driver> GetDrivers()
         {
             return Drivers;
+        }
+
+        public static List<Driver> GetDriversByServiceID(int ServiceID)
+        {
+            return Drivers.Where(d => d.ServiceID == ServiceID).ToList();
         }
 
 

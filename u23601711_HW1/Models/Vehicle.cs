@@ -8,10 +8,10 @@ namespace u23601711_HW1.Models
     public class Vehicle
     {
 
-        public int VehicleID { get; set; } //necessary or just reg number??
+        public int VehicleID { get; set; }
 
 
-        public string VehicleType { get; set; }//or integer??
+        public string VehicleType { get; set; }
 
         public string RegistrationNumber { get; set; }
         public int ServiceID { get; set; }

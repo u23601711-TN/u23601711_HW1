@@ -11,11 +11,17 @@ namespace u23601711_HW1.Models
 
         public int DriverID { get; set; }
         public int VehicleID { get; set; }
+
+        public int ServiceID { get; set; }
         public DateTime BookingDate { get; set; }
 
         public DateTime PickUpTime { get; set; }
         public string PickUpAddress { get; set; }
 
-        //SOS booking?????????????????? reason??
+        public string Reason { get; set; }//reason ID??
+
+        public bool isSOSBooking { get; set; }
+
+      
     }
 }
