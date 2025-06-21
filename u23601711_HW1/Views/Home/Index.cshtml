@@ -5,7 +5,7 @@
     <h1>A real O.K. team here to try and save you</h1>
     <p>If you're still breathing once you've reached the hospital, we've done our job successfully!</p>
     <p>
-        @Html.ActionLink("BOOK AMBULANCE", "Index", "SelectService", null, new { @class = "btn btn-primary btn-lg" })
+        @Html.ActionLink("BOOK AMBULANCE", "SelectService", "Booking", null, new { @class = "btn btn-primary btn-lg" })
     </p>
 </div>
 
@@ -15,13 +15,13 @@
         <p>Only hit the button for real emergencies mind you... Stepping on a thumbtack at 3 am while doing arts and crafts is not an emergency</p>
     </div>
     <div class="col-md-4 text-center">
-        @*  @using (Html.BeginForm("CreateSOSBooking", "Home", FormMethod.Post))
-        {
-            @Html.AntiForgeryToken()
-            <button type="submit" class="btn btn-danger btn-circle btn-xl">S.O.S.</button>
-        } *@
 
         <button type="submit" class="btn btn-danger btn-circle btn-xl">S.O.S.</button>
+
+        <p>
+            @Html.ActionLink("SOS", "CreateSOSBooking", "Home", null, new { @class = "btn btn-primary btn-lg" })
+        </p>
+        
     </div>
 </div>
 

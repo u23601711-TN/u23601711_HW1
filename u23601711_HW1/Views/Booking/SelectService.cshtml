@@ -1,5 +1,5 @@
-﻿@*@model List<u23601711_HW1.Models.Driver> *@
-    @model u23601711_HW1.Models.DriverViewModel
+﻿
+    @model List<u23601711_HW1.Models.Service>
 @{
     ViewBag.Title = "SelectService";
 }
@@ -10,18 +10,18 @@
 
 <div class="container mt-5">
 
-    @foreach (var driver in Model.Drivers)
+    @foreach (var Service in Model)
     {
         <div class="row row-cols-1 row-cols-md-3 g-4">
 
             <div class="col">
-                <a href="#" class="text-decoration-none text-reset">
-                    @*change # to relevant view*@
+                <a href=" @Html.ActionLink(" ", "BookingForm", "Booking", new { area = "" }, new { @class = "card" })" class="text-decoration-none text-reset">
+     
                     <div class="card h-100">
-                        <img src="@driver.DriverImage" class="card-img-top">
+                        <img src="@Service.ServiceImage" class="card-img-top">
                         <div class="card-body">
-                            <h5 class="card-title">Advanced Life Support</h5>
-                            <p class="card-text">ALS ambulance is staffed by a Paramedic and is used to transport patients who require high level of care.</p>
+                            <h5 class="card-title">@Service.ServiceName</h5>
+                            <p class="card-text">@Service.ServiceDescription</p>
                         </div>
                     </div>
                 </a>

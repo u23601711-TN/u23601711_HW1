@@ -15,7 +15,7 @@ namespace u23601711_HW1.Controllers
             return View();
         }
 
-        public ActionResult CreateSOSBooking()    
+   /*     public ActionResult CreateSOSBooking()    
         {
             var randomDriver = DriverRepository.GetDrivers().OrderBy(_ => Guid.NewGuid()).First();
             var randomVehicle = VehicleRepository.GetVehiclesByService(randomDriver.ServiceType).First();
@@ -32,9 +32,9 @@ namespace u23601711_HW1.Controllers
             BookingRepository.SaveBooking(booking);
 
             return RedirectToAction("BookingConfirmed", "Booking", new { id = booking.BookingID });
-        }
+        } 
 
-
+*/
 
 
     }

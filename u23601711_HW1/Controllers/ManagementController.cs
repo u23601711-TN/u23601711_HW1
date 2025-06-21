@@ -13,5 +13,10 @@ namespace u23601711_HW1.Controllers
         {
             return View();
         }
+
+        public ActionResult DriverVehicleManagement()
+        {
+            return View();
+        }
     }
 }
