@@ -21,46 +21,42 @@ namespace u23601711_HW1.Controllers
             return View(Services);
         }
 
-        public ActionResult BookingForm()
+        
+        public ActionResult BookingForm(int ServiceId)
         {
-            return View();
+            var service = ServiceRepository.GetServiceById(ServiceId);
+            var model = new BookingVM
+            {
+                ServiceId = service.ServiceID,
+                ServiceName = service.ServiceName,
+                Drivers = DriverRepository.GetDriversByServiceID(service.ServiceID),
+                Vehicles = VehicleRepository.GetVehiclesByServiceID(service.ServiceID)
+            };
+            return View(model);
         }
-        /*
-                public ActionResult BookingForm(int ServiceId)
-                {
-                    var service = ServiceRepository.GetServiceById(serviceTypeId);
-                    var model = new BookingFormViewModel
-                    {
-                        ServiceId = service.Id,
-                        ServiceName = service.Name,
-                        Drivers = DriverRepository.GetDriversByService(service.Id),
-                        Vehicles = VehicleRepository.GetVehiclesByService(service.Id)
-                    };
-                    return View(model);
-                }
-       */  /*
+         
 
-                [HttpPost]
-                public ActionResult SubmitBooking(Guid driverId, Guid vehicleId, string location, int serviceId)
-                {
-                    var service = ServiceRepository.GetServiceById(serviceId);
-                    var driver = DriverRepository.GetAllDrivers().Find(d => d.DriverId == driverId);
-                    var vehicle = VehicleRepository.GetAllVehicles().Find(v => v.VehicleId == vehicleId);
+        [HttpPost]
+        public ActionResult SubmitBooking(Guid driverId, Guid vehicleId, string location, int serviceId)
+        {
+            var service = ServiceRepository.GetServiceById(serviceId);
+            var driver = DriverRepository.GetDrivers().Find(d => d.DriverID == driverId);
+            var vehicle = VehicleRepository.GetVehicles().Find(v => v.VehicleID == vehicleId);
 
-                    var booking = new Booking
-                    {
-                        ServiceId = service.Id,
-                        ServiceName = service.Name,
-                        SelectedDriver = driver,
-                        SelectedVehicle = vehicle,
-                        Location = location,
-                        IsSosBooking = false
-                    };
+            var booking = new Booking
+            {
+                ServiceID = service.ServiceID,
+               
+                DriverID = driverId,
+                VehicleID = vehicle,
+                Location = location,
+                IsSosBooking = false
+            };
 
-                    BookingRepository.SaveBooking(booking);
-                    return RedirectToAction("BookingConfirmed", new { id = booking.BookingId });
-                }
-        */
+            BookingRepository.SaveBooking(booking);
+            return RedirectToAction("BookingConfirmed", new { id = booking.BookingID });
+        }
+        
         public ActionResult BookingConfirmed(Guid Id)
         {
             var Booking = BookingRepository.GetBookingById(Id);

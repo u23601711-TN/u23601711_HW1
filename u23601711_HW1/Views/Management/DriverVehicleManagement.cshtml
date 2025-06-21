@@ -3,36 +3,46 @@
     ViewBag.Title = "DriverVehicleManagement";
 }
 
-<h2>DriverVehicleManagement</h2>
+<h2>Driver and Vehicle Management</h2>
 
-<h2>Manage Drivers & Vehicles</h2>
 
-<h3>Drivers</h3>
-<table class="table">
-    <thead><tr><th>Name</th><th>Service</th><th>Phone</th></tr></thead>
-    <tbody>
-        @foreach (var driver in Model.Drivers)
-        {
-            <tr>
-                <td>@driver.FirstName @driver.LastName</td>
-                <td>@driver.ServiceType</td>
-                <td>@driver.PhoneNumber</td>
-            </tr>
-        }
-    </tbody>
-</table>
+<div>
+    <h3>Drivers</h3>
+    <input type="button" value="Create" @*onclick="msg()"*@ />
+    <table class="table">
+        <thead><tr><th>IMAGE</th><th>FIRST NAME</th><th>LAST NAME</th><th>PHONE NUMBER</th><th>SERVICE</th><th>CONTROLS</th></tr></thead>
+        <tbody>
+            @foreach (var driver in Model.Drivers)
+            {
+                <tr>
+                    <td><img src="@driver.DriverImage" /></td>
+                    <td>@driver.DriverFirstName</td>
+                    <td>@driver.DriverLastName</td>
+                    <td>@driver.ServiceID</td>
+                    <td>@driver.DriverPhone</td>
+                    <td><input type="button" value="Update" @*onclick="msg()"*@ /><input type="button" value="Delete" @*onclick="msg()"*@ /></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
 
-<h3>Vehicles</h3>
-<table class="table">
-    <thead><tr><th>Name</th><th>Registration</th><th>Service</th></tr></thead>
-    <tbody>
-        @foreach (var vehicle in Model.Vehicles)
-        {
-            <tr>
-                <td>@vehicle.VehicleName</td>
-                <td>@vehicle.RegistrationNumber</td>
-                <td>@vehicle.ServiceType</td>
-            </tr>
-        }
-    </tbody>
-</table>
+<div>
+    <h3>Vehicles</h3>
+    <input type="button" value="Create" @*onclick="msg()"*@ />
+    <table class="table">
+        <thead><tr><th>IMAGE</th><th>TYPE</th><th>REGISTRATION</th><th>SERVICE</th><th>CONTROLS</th></tr></thead>
+        <tbody>
+            @foreach (var vehicle in Model.Vehicles)
+            {
+                <tr>
+                    <td><img src="@vehicle.VehicleImage" /></td>
+                    <td>@vehicle.VehicleType</td>
+                    <td>@vehicle.RegistrationNumber</td>
+                    <td>@vehicle.ServiceID</td>
+                    <td><input type="button" value="Update" @*onclick="msg()"*@ /><input type="button" value="Delete" @*onclick="msg()"*@ /></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

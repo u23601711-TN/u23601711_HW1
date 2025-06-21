@@ -77,9 +77,12 @@
 
     </head>*@
 
-<h2>BookingForm</h2>
+<h2>@Model.ServiceName</h2>
 
-<form class="container" style="max-width: 600px;">
+
+<form method="post" action="/Booking/SubmitBooking">
+    <input type="hidden" name="serviceId" value="@Model.ServiceId" />
+
     <div class="row g-3">
         <div class="col-md-6">
             <label for="fullName" class="form-label">Full Name<span class="text-danger">*</span></label>
@@ -103,9 +106,9 @@
             <select id="reason" class="form-select" required>
                 <option value="" disabled selected>Choose reason</option>
                 <option>Accident</option>
-                <option>Medical Emergency</option>
-                <option>Transport</option>
-                <option>Other</option>
+                <option>option 2</option>
+                <option>option 3</option>
+                <option>option 4</option>
             </select>
         </div>
 
@@ -113,9 +116,12 @@
             <label for="vehicle" class="form-label">Vehicle<span class="text-danger">*</span></label>
             <select id="vehicle" class="form-select" required>
                 <option value="" disabled selected>Choose vehicle</option>
-                <option>Type 1</option>
-                <option>Type 2</option>
-                <option>Type 3</option>
+                @foreach (var vehicle in Model.Vehicles)
+                {
+                    <option value="@vehicle.VehicleID">@vehicle.VehicleType</option>
+                }
+
+
             </select>
         </div>
 
@@ -123,9 +129,10 @@
             <label for="driver" class="form-label">Driver<span class="text-danger">*</span></label>
             <select id="driver" class="form-select" required>
                 <option value="" disabled selected>Choose driver</option>
-                <option>John Carter</option>
-                <option>Jane Doe</option>
-                <option>Mark Smith</option>
+                @foreach (var driver in Model.Drivers)
+                {
+                    <option value="@driver.DriverID">@driver.DriverFirstName @driver.DriverLastName</option>
+                }
             </select>
         </div>
 

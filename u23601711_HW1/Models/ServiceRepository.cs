@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Services.Description;
 
 namespace u23601711_HW1.Models
 {
@@ -21,5 +22,7 @@ namespace u23601711_HW1.Models
         {
             return Services;
         }
+        public static Service GetServiceById(int id) =>
+    Services.FirstOrDefault(s => s.ServiceID == id);
     }
 }

@@ -17,7 +17,7 @@ namespace u23601711_HW1.Models
       
         public static List<Vehicle> GetVehicles() => Vehicles;
 
-        public static List<Vehicle> GetVehiclesByService(int ServiceID ) =>
+        public static List<Vehicle> GetVehiclesByServiceID(int ServiceID ) =>
             Vehicles.Where(v => v.ServiceID == ServiceID).ToList();
     }
 }
