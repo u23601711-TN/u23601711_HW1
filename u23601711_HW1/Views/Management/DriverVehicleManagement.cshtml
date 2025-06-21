@@ -1,7 +1,38 @@
-﻿
+﻿@model u23601711_HW1.Models.ManagementVM
 @{
     ViewBag.Title = "DriverVehicleManagement";
 }
 
 <h2>DriverVehicleManagement</h2>
 
+<h2>Manage Drivers & Vehicles</h2>
+
+<h3>Drivers</h3>
+<table class="table">
+    <thead><tr><th>Name</th><th>Service</th><th>Phone</th></tr></thead>
+    <tbody>
+        @foreach (var driver in Model.Drivers)
+        {
+            <tr>
+                <td>@driver.FirstName @driver.LastName</td>
+                <td>@driver.ServiceType</td>
+                <td>@driver.PhoneNumber</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h3>Vehicles</h3>
+<table class="table">
+    <thead><tr><th>Name</th><th>Registration</th><th>Service</th></tr></thead>
+    <tbody>
+        @foreach (var vehicle in Model.Vehicles)
+        {
+            <tr>
+                <td>@vehicle.VehicleName</td>
+                <td>@vehicle.RegistrationNumber</td>
+                <td>@vehicle.ServiceType</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -9,14 +9,14 @@
 
 
 <div class="container mt-5">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        @foreach (var Service in Model)
+        {
 
-    @foreach (var Service in Model)
-    {
-        <div class="row row-cols-1 row-cols-md-3 g-4">
 
             <div class="col">
-                <a href=" @Html.ActionLink(" ", "BookingForm", "Booking", new { area = "" }, new { @class = "card" })" class="text-decoration-none text-reset">
-     
+                <a href="@Url.Action("BookingForm", "Booking", new { serviceTypeId = @Service.ServiceID })" class="text-decoration-none text-reset">
+
                     <div class="card h-100">
                         <img src="@Service.ServiceImage" class="card-img-top">
                         <div class="card-body">
@@ -26,9 +26,9 @@
                     </div>
                 </a>
             </div>
-
+        }
         </div>
-    }
+    
     </div>
        
           

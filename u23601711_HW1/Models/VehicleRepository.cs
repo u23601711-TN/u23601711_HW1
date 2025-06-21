@@ -15,7 +15,7 @@ namespace u23601711_HW1.Models
            new Vehicle { VehicleID=4, VehicleType="Type 3", RegistrationNumber="AA1234", ServiceID=4, VehicleImage="/content/images/D1.jpg" }
         };
       
-        public static List<Vehicle> GetAllVehicles() => Vehicles;
+        public static List<Vehicle> GetVehicles() => Vehicles;
 
         public static List<Vehicle> GetVehiclesByService(int ServiceID ) =>
             Vehicles.Where(v => v.ServiceID == ServiceID).ToList();
