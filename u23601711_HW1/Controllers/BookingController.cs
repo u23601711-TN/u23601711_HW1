@@ -46,11 +46,11 @@ namespace u23601711_HW1.Controllers
             var booking = new Booking
             {
                 ServiceID = service.ServiceID,
-               
-                DriverID = driverId,
-                VehicleID = vehicle,
-                Location = location,
-                IsSosBooking = false
+                ServiceName= service.ServiceName,
+                Driver = driver,
+                Vehicle = vehicle,
+                PickUpAddress = location,
+                isSOSBooking = false
             };
 
             BookingRepository.SaveBooking(booking);

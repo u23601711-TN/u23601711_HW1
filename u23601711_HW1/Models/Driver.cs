@@ -7,7 +7,7 @@ namespace u23601711_HW1.Models
 {
     public class Driver
     {
-        public int DriverID { get; set; }
+        public Guid DriverID { get; set; } = Guid.NewGuid();
 
         public string DriverFirstName { get; set; }
 

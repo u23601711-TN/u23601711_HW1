@@ -9,10 +9,12 @@ namespace u23601711_HW1.Models
     {
         public Guid BookingID { get; set; } = Guid.NewGuid();
 
-        public int DriverID { get; set; }
-        public int VehicleID { get; set; }
+        public Driver Driver { get; set; }
+        public Vehicle Vehicle { get; set; }
 
         public int ServiceID { get; set; }
+
+        public string ServiceName { get; set; }
         public DateTime BookingDate { get; set; }
 
         public DateTime PickUpTime { get; set; }

@@ -15,18 +15,23 @@ namespace u23601711_HW1.Controllers
             return View();
         }
 
-   /*     public ActionResult CreateSOSBooking()    
+    public ActionResult CreateSOSBooking()    
         {
-            var randomDriver = DriverRepository.GetDrivers().OrderBy(_ => Guid.NewGuid()).First();
-            var randomVehicle = VehicleRepository.GetVehiclesByService(randomDriver.ServiceType).First();
+            var drivers = DriverRepository.GetDrivers();
+            var vehicles = VehicleRepository.GetVehicles();
+
+            var randomDriver = drivers[random.Next(drivers.Count)];
+            var randomVehicle = vehicles[random.Next(vehicles.Count)];
+
+            var service = ServiceRepository.GetServiceById(randomDriver.ServiceID);
 
             var booking = new Booking
             {
-                ServiceType = randomDriver.ServiceType,
-                SelectedDriver = randomDriver,
-                SelectedVehicle = randomVehicle,
-                Location = "Random Location",
-                IsSosBooking = true
+                ServiceID = randomDriver.ServiceID,
+                Driver = randomDriver,
+                Vehicle = randomVehicle,
+                PickUpAddress = "SOS booking N/A",
+                isSOSBooking = true
             };
 
             BookingRepository.SaveBooking(booking);
@@ -34,7 +39,7 @@ namespace u23601711_HW1.Controllers
             return RedirectToAction("BookingConfirmed", "Booking", new { id = booking.BookingID });
         } 
 
-*/
+
 
 
     }

@@ -8,7 +8,7 @@ namespace u23601711_HW1.Models
     public class Vehicle
     {
 
-        public int VehicleID { get; set; }
+        public Guid VehicleID { get; set; } = Guid.NewGuid();
 
 
         public string VehicleType { get; set; }
