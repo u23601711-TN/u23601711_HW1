@@ -16,7 +16,7 @@ namespace u23601711_HW1.Models
 
         public static List<Booking> GetAllBookings() => Bookings;
 
-        public static Booking GetBookingById(System.Guid id) =>  //GUID??????????????
+        public static Booking GetBookingById(System.Guid id) =>  
             Bookings.FirstOrDefault(b => b.BookingID == id);
     }
 }

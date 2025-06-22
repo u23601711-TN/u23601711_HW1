@@ -10,7 +10,7 @@ namespace u23601711_HW1.Models
 
         private static List<Driver> Drivers = new List<Driver>
         {
-           //return new List<Driver>();
+           
             
             new Driver {  DriverFirstName = "Anele", DriverLastName = "Naidoo", DriverPhone = "+27 82 456 7890", DriverImage = "/content/images/D1.jpg", ServiceID = 1 },
             new Driver {  DriverFirstName = "Lerato", DriverLastName = "Goldberg", DriverPhone = "+27 61 234 5678", DriverImage = "/content/images/D1.jpg", ServiceID = 2 },

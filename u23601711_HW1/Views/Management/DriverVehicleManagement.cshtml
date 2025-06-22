@@ -8,7 +8,7 @@
 
 <div>
     <h3>Drivers</h3>
-    <input type="button" value="Create" @*onclick="msg()"*@ />
+    <input type="button" value="Create" @*onclick=""*@ />
     <table class="table">
         <thead><tr><th>IMAGE</th><th>FIRST NAME</th><th>LAST NAME</th><th>PHONE NUMBER</th><th>SERVICE</th><th>CONTROLS</th></tr></thead>
         <tbody>
@@ -20,7 +20,7 @@
                     <td>@driver.DriverLastName</td>
                     <td>@driver.ServiceID</td>
                     <td>@driver.DriverPhone</td>
-                    <td><input type="button" value="Update" @*onclick="msg()"*@ /><input type="button" value="Delete" @*onclick="msg()"*@ /></td>
+                    <td><input type="button" value="Update" @*onclick=""*@ /><input type="button" value="Delete" @*onclick="msg()"*@ /></td>
                 </tr>
             }
         </tbody>
@@ -29,7 +29,7 @@
 
 <div>
     <h3>Vehicles</h3>
-    <input type="button" value="Create" @*onclick="msg()"*@ />
+    <input type="button" value="Create" @*onclick=""*@ />
     <table class="table">
         <thead><tr><th>IMAGE</th><th>TYPE</th><th>REGISTRATION</th><th>SERVICE</th><th>CONTROLS</th></tr></thead>
         <tbody>
@@ -40,7 +40,7 @@
                     <td>@vehicle.VehicleType</td>
                     <td>@vehicle.RegistrationNumber</td>
                     <td>@vehicle.ServiceID</td>
-                    <td><input type="button" value="Update" @*onclick="msg()"*@ /><input type="button" value="Delete" @*onclick="msg()"*@ /></td>
+                    <td><input type="button" value="Update" @*onclick=""*@ /><input type="button" value="Delete" @*onclick="msg()"*@ /></td>
                 </tr>
             }
         </tbody>

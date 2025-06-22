@@ -57,7 +57,7 @@ namespace u23601711_HW1.Controllers
             };
 
             BookingRepository.SaveBooking(booking);
-            //return RedirectToAction("BookingConfirmed", booking.BookingID );
+            
             return RedirectToAction("BookingConfirmed", new { id = booking.BookingID });
         }
         
