@@ -14,10 +14,10 @@
     <div class="card mb-3">
         <div class="card-body">
             <h5 class="card-title">Booking Details</h5>
-            <p>Booking ID: <span id="bookingId">GUID</span></p>
-            <p>Date Booked: <span id="dateBooked">DD/MM/YYYY</span></p>
-            <p>Pick-Up Time: <span id="pickupTime">--:--</span></p>
-            <p>Pick-Up Address: <span id="pickupAddress"></span></p>
+            <p>Booking ID: @Model.BookingID</p>
+            <p>Date Booked: @Model.BookingDate.ToString("yyyy-MM-dd HH:mm")</p>
+            <p>Pick-Up Time: @Model.PickUpTime.ToString("HH:mm")</p>
+            <p>Pick-Up Address: @Model.PickUpAddress</p>
         </div>
     </div>
 
@@ -25,9 +25,9 @@
     <div class="card mb-3">
         <div class="card-body text-center">
             <h5 class="card-title">Driver Details</h5>
-            <img id="driverImage" src="https://via.placeholder.com/80" class="avatar mb-2" alt="Driver Image">
-            <p>Driver Name: <span id="driverFullName"></span></p>
-            <p>Phone Number: <span id="driverPhone"></span></p>
+            <img id="driverImage" src="@Model.Driver.DriverImage" class="avatar mb-2" alt="Driver Image">
+            <p>Driver Name: @Model.Driver.DriverFirstName @Model.Driver.DriverLastName</p>
+            <p>Phone Number: @Model.Driver.DriverPhone </p>
         </div>
     </div>
 
@@ -35,9 +35,9 @@
     <div class="card mb-3">
         <div class="card-body text-center">
             <h5 class="card-title">Ambulance Details</h5>
-            <img src="https://cdn-icons-png.flaticon.com/512/2969/2969597.png" class="ambulance-icon mb-2" alt="Ambulance">
-            <p>Ambulance Type: <span id="ambulanceType"></span></p>
-            <p>Registration Number: <span id="registrationNumber"></span></p>
+            <img src="@Model.Vehicle.VehicleImage" class="ambulance-icon mb-2" alt="Ambulance">
+            <p>Ambulance Type: @Model.Vehicle.VehicleType</p>
+            <p>Registration Number: @Model.Vehicle.RegistrationNumber</p>
         </div>
     </div>
 

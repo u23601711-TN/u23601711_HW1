@@ -17,6 +17,7 @@ namespace u23601711_HW1.Controllers
 
     public ActionResult CreateSOSBooking()    
         {
+            var random = new Random();
             var drivers = DriverRepository.GetDrivers();
             var vehicles = VehicleRepository.GetVehicles();
 
@@ -28,9 +29,11 @@ namespace u23601711_HW1.Controllers
             var booking = new Booking
             {
                 ServiceID = randomDriver.ServiceID,
+                ServiceName = service.ServiceName,
                 Driver = randomDriver,
                 Vehicle = randomVehicle,
                 PickUpAddress = "SOS booking N/A",
+                PickUpTime = DateTime.Now,
                 isSOSBooking = true
             };
 

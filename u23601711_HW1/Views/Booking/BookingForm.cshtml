@@ -83,67 +83,66 @@
 <form method="post" action="/Booking/SubmitBooking">
     <input type="hidden" name="serviceId" value="@Model.ServiceId" />
 
-    <div class="row g-3">
-        <div class="col-md-6">
-            <label for="fullName" class="form-label">Full Name<span class="text-danger">*</span></label>
-            <input type="text" class="form-control" id="fullName" placeholder="John Carter" required />
-        </div>
-        <div class="col-md-6">
-            <label for="phone" class="form-label">Phone<span class="text-danger">*</span></label>
-            <input type="tel" class="form-control" id="phone" placeholder="+27 00 000 0000" required />
-        </div>
-
-        <div class="col-md-6">
-            <label for="pickUpTime" class="form-label">Pick-Up Time<span class="text-danger">*</span></label>
-            <div class="input-group">
-                <input type="time" class="form-control" id="pickUpTime" required />
-
-            </div>
-        </div>
-
-        <div class="col-md-6">
-            <label for="reason" class="form-label">Reason<span class="text-danger">*</span></label>
-            <select id="reason" class="form-select" required>
-                <option value="" disabled selected>Choose reason</option>
-                <option>Accident</option>
-                <option>option 2</option>
-                <option>option 3</option>
-                <option>option 4</option>
-            </select>
-        </div>
-
-        <div class="col-md-6">
-            <label for="vehicle" class="form-label">Vehicle<span class="text-danger">*</span></label>
-            <select id="vehicle" class="form-select" required>
-                <option value="" disabled selected>Choose vehicle</option>
-                @foreach (var vehicle in Model.Vehicles)
-                {
-                    <option value="@vehicle.VehicleID">@vehicle.VehicleType</option>
-                }
-
-
-            </select>
-        </div>
-
-        <div class="col-md-6">
-            <label for="driver" class="form-label">Driver<span class="text-danger">*</span></label>
-            <select id="driver" class="form-select" required>
-                <option value="" disabled selected>Choose driver</option>
-                @foreach (var driver in Model.Drivers)
-                {
-                    <option value="@driver.DriverID">@driver.DriverFirstName @driver.DriverLastName</option>
-                }
-            </select>
-        </div>
-
-        <div class="col-6">
-            <label for="address" class="form-label">Pick-Up Address</label>
-            <textarea id="address" class="form-control" placeholder="Please type your address here..."></textarea>
-        </div>
-
-        <div class="col-12">
-            <button type="submit" class="btn btn-book">BOOK AMBULANCE</button>
-        </div>
+    @*<div class="row g-3">*@
+    <div class="col-md-6">
+        <label for="fullName" class="form-label">Full Name<span class="text-danger">*</span></label>
+        <input type="text" class="form-control" id="fullName" placeholder="John Carter" required />
     </div>
+    <div class="col-md-6">
+        <label for="phone" class="form-label">Phone<span class="text-danger">*</span></label>
+        <input type="tel" class="form-control" id="phone" placeholder="+27 00 000 0000" required />
+    </div>
+    <div class="mb-3">
+        <label>Pick-Up Time</label>
+        <input type="datetime-local" name="pickupTime" class="form-control" required />
+    </div>
+
+    <div class="col-md-6">
+        <label for="reason" class="form-label">Reason<span class="text-danger">*</span></label>
+        <select id="reason" class="form-select" required>
+            <option value="" disabled selected>Choose reason</option>
+            <option>Accident</option>
+            <option>option 2</option>
+            <option>option 3</option>
+            <option>option 4</option>
+        </select>
+    </div>
+
+
+
+
+    <div class="col-md-6">
+        <label for="vehicle" class="form-label">Vehicle<span class="text-danger">*</span></label>
+        <select id="vehicle" class="form-select" required>
+            <option value="" disabled selected>Choose vehicle</option>
+            @foreach (var vehicle in Model.Vehicles)
+            {
+                <option value="@vehicle.VehicleID">@vehicle.VehicleType</option>
+            }
+
+
+        </select>
+    </div>
+
+    <div class="col-md-6">
+        <label for="driver" class="form-label">Driver<span class="text-danger">*</span></label>
+        <select id="driver" class="form-select" required>
+            <option value="" disabled selected>Choose driver</option>
+            @foreach (var driver in Model.Drivers)
+            {
+                <option value="@driver.DriverID">@driver.DriverFirstName @driver.DriverLastName</option>
+            }
+        </select>
+    </div>
+
+    <div class="col-6">
+        <label for="address" class="form-label">Pick-Up Address</label>
+        <textarea id="address" class="form-control" placeholder="Please type your address here..."></textarea>
+    </div>
+
+    <div class="col-12">
+        <button type="submit" class="btn btn-book">BOOK AMBULANCE</button>
+    </div>
+
 </form>
 

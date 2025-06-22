@@ -6,7 +6,7 @@ using System.Web;
 namespace u23601711_HW1.Models
 {
     public class Booking
-    {
+    {                                                               //NB add patientName and PatientPhone
         public Guid BookingID { get; set; } = Guid.NewGuid();
 
         public Driver Driver { get; set; }
