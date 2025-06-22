@@ -1,7 +1,45 @@
-﻿
+﻿@model List<u23601711_HW1.Models.Booking>
 @{
     ViewBag.Title = "RideHistory";
 }
 
-<h2>RideHistory</h2>
 
+
+<div class="container">
+    <div class="text-center mb-4">
+        <span>⏰</span>
+        <h2>Ride History</h2>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <h2 class="mb-4">Ride History</h2>
+
+    <div class="row row-cols-1 g-3">
+        @foreach (var booking in Model)
+        {
+            <div class="col">
+                <div class="card shadow-sm rounded-4 p-3 d-flex flex-row align-items-center justify-content-between">
+
+                    <div>
+                        <div class="mb-2 fw-bold fs-5 text-secondary">
+                            @booking.BookingDate.ToString("dd / MM / yyyy")
+                        </div>
+
+                        <div><strong>Booking ID:</strong> @booking.BookingID</div>
+                        <div><strong>Driver Name:</strong> @booking.Driver.DriverFirstName @booking.Driver.DriverLastName</div>
+                        <div><strong>Ambulance Type:</strong> @booking.Vehicle.VehicleType</div>
+                        <div><strong>Pick-Up Address:</strong> @booking.PickUpAddress</div>
+                    </div>
+
+                    <div>
+                        <a href="@Url.Action("BookingConfirmed", "Booking", new { id = booking.BookingID })" class="btn btn-light">
+                            <p>></p>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        }
+    </div>
+</div>

@@ -36,8 +36,8 @@ namespace u23601711_HW1.Controllers
         }
          
 
-        [HttpPost]                              //NB add pick up time here and in view
-        public ActionResult SubmitBooking(Guid driverId, Guid vehicleId, string location, DateTime pickUpTime, int serviceId)
+        [HttpPost]                              
+        public ActionResult SubmitBooking(Guid driverId, Guid vehicleId, string location, DateTime pickUpTime, int serviceId, string patientName, string patientPhone)
         {
             var service = ServiceRepository.GetServiceById(serviceId);
             var driver = DriverRepository.GetDrivers().Find(d => d.DriverID == driverId);
@@ -51,11 +51,14 @@ namespace u23601711_HW1.Controllers
                 Vehicle = vehicle,
                 PickUpAddress = location,
                 PickUpTime = pickUpTime,
+                PatientName = patientName,
+                PatientPhone = patientPhone,
                 isSOSBooking = false
             };
 
             BookingRepository.SaveBooking(booking);
-            return RedirectToAction("BookingConfirmed", booking.BookingID );
+            //return RedirectToAction("BookingConfirmed", booking.BookingID );
+            return RedirectToAction("BookingConfirmed", new { id = booking.BookingID });
         }
         
         public ActionResult BookingConfirmed(Guid Id)

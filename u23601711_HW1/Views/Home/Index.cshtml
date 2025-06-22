@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "About";
+    ViewBag.Title = "Index"; @*changed from about to index*@
 }
 <div class="jumbotron">
     <h1>A real O.K. team here to try and save you</h1>
@@ -16,10 +16,10 @@
     </div>
     <div class="col-md-4 text-center">
 
-        <button type="submit" class="btn btn-danger btn-circle btn-xl">S.O.S.</button>
+        @*<button type="submit" class="btn btn-danger btn-circle btn-xl">S.O.S.</button>*@
 
         <p>
-            @Html.ActionLink("SOS", "CreateSOSBooking", "Home", null, new { @class = "btn btn-primary btn-lg" })
+            @Html.ActionLink("SOS", "CreateSOSBooking", "Home", null, new { @class = "btn btn-danger btn-circle btn-xl" })
         </p>
         
     </div>
@@ -35,6 +35,7 @@
             border-radius: 75px;
             font-size: 24px;
             line-height: 1.33;
+            text-align:center;
         }
 
         .jumbotron h1, p {

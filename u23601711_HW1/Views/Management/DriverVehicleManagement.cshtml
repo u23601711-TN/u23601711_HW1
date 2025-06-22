@@ -15,7 +15,7 @@
             @foreach (var driver in Model.Drivers)
             {
                 <tr>
-                    <td><img src="@driver.DriverImage" /></td>
+                    <td><img src="@driver.DriverImage" class="img-fluid" style="height: 20px; width: auto;"/></td>
                     <td>@driver.DriverFirstName</td>
                     <td>@driver.DriverLastName</td>
                     <td>@driver.ServiceID</td>
@@ -45,4 +45,8 @@
             }
         </tbody>
     </table>
+</div>
+
+<div>
+    <a href="@Url.Action("ExportVehicles", "Management")" class="btn btn-primary">Export Vehicles</a>
 </div>

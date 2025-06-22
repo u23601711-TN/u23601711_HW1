@@ -6,7 +6,7 @@ using System.Web;
 namespace u23601711_HW1.Models
 {
     public class Booking
-    {                                                               //NB add patientName and PatientPhone
+    {                                                               
         public Guid BookingID { get; set; } = Guid.NewGuid();
 
         public Driver Driver { get; set; }
@@ -15,7 +15,10 @@ namespace u23601711_HW1.Models
         public int ServiceID { get; set; }
 
         public string ServiceName { get; set; }
-        public DateTime BookingDate { get; set; }
+
+        public string PatientName { get; set; }
+        public string PatientPhone { get; set; }
+        public DateTime BookingDate { get; set; } = DateTime.Now;
 
         public DateTime PickUpTime { get; set; }
         public string PickUpAddress { get; set; }
